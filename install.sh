@@ -85,58 +85,59 @@ case "$1" in
 
 --mode)
 
-MODE="$2"
-shift 2
-;;
+    MODE="$2"
+    shift 2
+    ;;
 
 
 --panel)
 
-PANEL="$2"
-shift 2
-;;
+    PANEL="$2"
+    shift 2
+    ;;
 
 
 --token)
 
-TOKEN="$2"
-shift 2
-;;
+    TOKEN="$2"
+    shift 2
+    ;;
 
 
 --machine-id)
 
-MACHINE_ID="$2"
-shift 2
-;;
+    MACHINE_ID="$2"
+    shift 2
+    ;;
 
 
 --debug)
 
-DEBUG=1
-shift
-;;
+    DEBUG=1
+    shift
+    ;;
 
 
 -h|--help)
 
-echo "
+cat <<EOF
+
 Usage:
 
 Interactive:
 
- ./install.sh
+./install.sh
 
 
 Machine mode:
 
- ./install.sh \
+./install.sh \
  --mode machine \
  --panel URL \
  --token TOKEN \
  --machine-id ID
 
-"
+EOF
 
 exit 0
 ;;
@@ -144,12 +145,16 @@ exit 0
 
 *)
 
-shift
-;;
+    echo "Unknown argument: $1"
+
+    shift
+    ;;
+
 
 esac
 
 done
+
 
 }
 
