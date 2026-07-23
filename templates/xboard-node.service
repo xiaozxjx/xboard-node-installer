@@ -1,0 +1,10 @@
+[Unit]
+Description=XBoard Node
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/xboard-node -c /etc/xboard-node/config.yml
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

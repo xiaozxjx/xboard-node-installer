@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name="xboard-node"
+command="/usr/local/bin/xboard-node"
+command_args="-c /etc/xboard-node/config.yml"
+command_background=yes
+
+depend(){
+    need net
+}
