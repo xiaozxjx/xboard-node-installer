@@ -1,5 +1,17 @@
 # XBoard Node Universal Installer
 
+使用方法：
+
+```bash
+curl -fsSL \
+https://raw.githubusercontent.com/xiaozxjx/xboard-node-installer/main/install-online.sh \
+| bash -- \
+--mode machine \
+--panel "https://1013.005448.xyz" \
+--token "你的token" \
+--machine-id 10
+
+
 一个适用于多种 Linux 环境的 XBoard Node 自动安装器。
 
 支持：
