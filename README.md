@@ -2,7 +2,7 @@
 
 使用方法：
 
-```bash
+
 curl -fsSL \
 https://raw.githubusercontent.com/xiaozxjx/xboard-node-installer/main/install-online.sh \
 | bash -- \
