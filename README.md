@@ -2,15 +2,15 @@
 
 使用方法：
 
-
+```bash
 curl -fsSL \
 https://raw.githubusercontent.com/xiaozxjx/xboard-node-installer/main/install-online.sh \
 | bash -- \
 --mode machine \
---panel "https://1013.005448.xyz" \
+--panel "你的服务器地址" \
 --token "你的token" \
---machine-id 10
-
+--machine-id 你的ID
+```
 
 一个适用于多种 Linux 环境的 XBoard Node 自动安装器。
 
