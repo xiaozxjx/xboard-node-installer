@@ -1,0 +1,80 @@
+name: Release XBoard Node Installer
+
+on:
+
+  push:
+    tags:
+      - "v*"
+
+
+  workflow_dispatch:
+
+
+permissions:
+
+  contents: write
+
+
+
+jobs:
+
+  release:
+
+
+    runs-on: ubuntu-latest
+
+
+    steps:
+
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+
+
+    - name: Prepare package
+      run: |
+
+        mkdir -p build/xboard-node-installer
+
+        cp -r \
+          install.sh \
+          lib \
+          templates \
+          README.md \
+          build/xboard-node-installer/
+
+
+        chmod +x \
+          build/xboard-node-installer/install.sh
+
+
+        tar -czf \
+          xboard-node-installer.tar.gz \
+          -C build \
+          xboard-node-installer
+
+
+
+    - name: Generate checksum
+      run: |
+
+        sha256sum \
+          xboard-node-installer.tar.gz \
+          > SHA256SUMS
+
+
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+
+      with:
+
+        files: |
+
+          xboard-node-installer.tar.gz
+
+          SHA256SUMS
+
+
+        generate_release_notes: true
