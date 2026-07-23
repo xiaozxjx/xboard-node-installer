@@ -38,7 +38,7 @@ DOWNLOAD_DIR="/tmp/xboard-node-download"
 get_latest_version()
 {
 
-    log_info "Checking latest xboard-node version..."
+    log_info "Checking latest xboard-node version..." >&2
 
 
     if ! command_exists curl; then
@@ -157,7 +157,7 @@ download_xboard_node()
     version=$(get_latest_version)
 
 
-    log_info "Latest version: ${version}"
+    log_info "Latest version: ${version}" >&2
 
 
     url=$(get_download_url "${ARCH}")
@@ -170,8 +170,8 @@ download_xboard_node()
     fi
 
 
-    log_info "Download URL:"
-    log_info "${url}"
+    log_info "Download URL:" >&2
+    log_info "${url}" >&2
 
 
 
@@ -183,7 +183,7 @@ download_xboard_node()
 
     download_file \
         "${url}" \
-        "${file}"
+        "${file}" >&2
 
 
 
