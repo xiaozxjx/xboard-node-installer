@@ -82,13 +82,11 @@ do
 
 case "$1" in
 
-
 --mode)
 
     MODE="$2"
     shift 2
     ;;
-
 
 --panel)
 
@@ -96,13 +94,11 @@ case "$1" in
     shift 2
     ;;
 
-
 --token)
 
     TOKEN="$2"
     shift 2
     ;;
-
 
 --machine-id)
 
@@ -110,26 +106,17 @@ case "$1" in
     shift 2
     ;;
 
-
 --debug)
 
     DEBUG=1
     shift
     ;;
 
-
 -h|--help)
 
 cat <<EOF
 
 Usage:
-
-Interactive:
-
-./install.sh
-
-
-Machine mode:
 
 ./install.sh \
  --mode machine \
@@ -142,21 +129,18 @@ EOF
 exit 0
 ;;
 
-
 *)
 
     echo "Unknown argument: $1"
-
     shift
     ;;
-
 
 esac
 
 done
 
-
 }
+
 
 
 
@@ -356,6 +340,11 @@ require_root
 
 parse_args "$@"
 
+
+echo "MODE=${MODE}"
+echo "PANEL=${PANEL}"
+echo "TOKEN=${TOKEN}"
+echo "MACHINE_ID=${MACHINE_ID}"
 
 install_dependencies
 
