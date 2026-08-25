@@ -6,12 +6,7 @@
 curl -fsSL https://raw.githubusercontent.com/xiaozxjx/xboard-node-installer/main/install-online.sh | sh
 ```
 
-一个适用于多种 Linux 环境的 XBoard Node 自动安装器。
-
-支持：
-- Alpine Linux
-- OpenRC
-- systemd
+一个仅适用于Alpine环境的 XBoard Node 自动安装器。
 
 支持架构：
 
