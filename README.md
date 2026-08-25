@@ -3,8 +3,7 @@
 使用方法：
 
 ```bash
-curl -fsSL \
-https://raw.githubusercontent.com/xiaozxjx/xboard-node-installer/main/install-online.sh 
+curl -fsSL https://raw.githubusercontent.com/xiaozxjx/xboard-node-installer/main/install-online.sh | sh
 ```
 
 一个适用于多种 Linux 环境的 XBoard Node 自动安装器。
